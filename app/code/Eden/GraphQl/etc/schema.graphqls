@@ -1,0 +1,15 @@
+# Copyright © Magento, Inc. All rights reserved.
+# See COPYING.txt for license details.
+
+type Query {
+    student (
+        id: Int @doc(description: "Id of student")
+    ): Student @resolver(class: "Magento\\CmsGraphQl\\Model\\Resolver\\Page") @doc(description: "The student query returns information about a student")
+}
+
+type Student @doc(description: "Student defines all Student information") {
+    id: String @doc(description: "Id of student")
+    name: String @doc(description: "Name of student")
+    age: String @doc(description: "Student age")
+    class: String @doc(description: "Student class")
+}
