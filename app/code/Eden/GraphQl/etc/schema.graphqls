@@ -4,7 +4,7 @@
 type Query {
     student (
         id: Int @doc(description: "Id of student")
-    ): Student @resolver(class: "Magento\\CmsGraphQl\\Model\\Resolver\\Page") @doc(description: "The student query returns information about a student")
+    ): Student @resolver(class: "Magestore\\GraphQl\\Model\\Resolver\\Student") @doc(description: "The student query returns information about a student")
 }
 
 type Student @doc(description: "Student defines all Student information") {

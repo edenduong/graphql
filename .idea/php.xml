@@ -5,4 +5,5 @@
       <path value="$USER_HOME$/Downloads/Magento-CE-2.3.1_sample_data-2019-03-18-07-26-52" />
     </include_path>
   </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
 </project>
