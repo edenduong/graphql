@@ -2,7 +2,7 @@
 <project version="4">
   <component name="PhpIncludePathManager">
     <include_path>
-      <path value="$USER_HOME$/Downloads/Magento-CE-2.3.1_sample_data-2019-03-18-07-26-52" />
+      <path value="D:/Magento-CE-2.3.0_sample_data-2018-11-27-10-26-20" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
