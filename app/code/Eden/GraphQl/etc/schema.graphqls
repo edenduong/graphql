@@ -4,7 +4,11 @@
 type Query {
     student (
         id: Int @doc(description: "Id of student")
-    ): Student @resolver(class: "Magestore\\GraphQl\\Model\\Resolver\\Student") @doc(description: "The student query returns information about a student")
+    ): Student @resolver(class: "Eden\\GraphQl\\Model\\Resolver\\Student") @doc(description: "The student query returns information about a student")
+
+    book (
+        id: Int @doc(description: "Id of book")
+    ): Student @resolver(class: "Eden\\GraphQl\\Model\\Resolver\\Book") @doc(description: "The book query returns information about a book")
 }
 
 type Student @doc(description: "Student defines all Student information") {
@@ -12,4 +16,10 @@ type Student @doc(description: "Student defines all Student information") {
     name: String @doc(description: "Name of student")
     age: String @doc(description: "Student age")
     class: String @doc(description: "Student class")
+}
+
+type Book @doc(description: "Book defines all Book information") {
+    id: String @doc(description: "Id of book")
+    name: String @doc(description: "Name of book")
+    description: String @doc(description: "Description of book")
 }

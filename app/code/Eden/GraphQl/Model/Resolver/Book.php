@@ -14,26 +14,26 @@ use Magento\Framework\GraphQl\Query\ResolverInterface;
 use Magento\Framework\GraphQl\Schema\Type\ResolveInfo;
 
 /**
- * Student field resolver, used for GraphQL request processing
+ * Book field resolver, used for GraphQL request processing
  */
-class Student implements ResolverInterface
+class Book implements ResolverInterface
 {
     /**
-     * @var \Eden\GraphQl\Model\ResourceModel\Student
+     * @var \Eden\GraphQl\Model\ResourceModel\Book
      */
-    protected $studentResource;
+    protected $bookResource;
 
     /**
-     * @var \Eden\GraphQl\Model\StudentFactory
+     * @var \Eden\GraphQl\Model\BookFactory
      */
-    protected $studentFactory;
+    protected $bookFactory;
 
     public function __construct(
-        \Eden\GraphQl\Model\ResourceModel\Student $studentResource,
-        \Eden\GraphQl\Model\StudentFactory $studentFactory
+        \Eden\GraphQl\Model\ResourceModel\Book $bookResource,
+        \Eden\GraphQl\Model\BookFactory $bookFactory
     ){
-        $this->studentResource = $studentResource;
-        $this->studentFactory = $studentFactory;
+        $this->bookResource = $bookResource;
+        $this->bookFactory = $bookFactory;
     }
 
     /**
@@ -46,9 +46,9 @@ class Student implements ResolverInterface
         array $value = null,
         array $args = null
     ) {
-        $studentId = $this->getStudentId($args);
-        $studentData = $this->getStudentData($studentId);
-        return $studentData;
+        $bookId = $this->getBookId($args);
+        $bookData = $this->getBookData($bookId);
+        return $bookData;
     }
 
     /**
@@ -56,24 +56,24 @@ class Student implements ResolverInterface
      * @return int
      * @throws GraphQlInputException
      */
-    private function getStudentId(array $args): int
+    private function getBookId(array $args): int
     {
         if (!isset($args['id'])) {
-            throw new GraphQlInputException(__('"Student id should be specified'));
+            throw new GraphQlInputException(__('"Book id should be specified'));
         }
 
         return (int)$args['id'];
     }
 
     /**
-     * @param int $studentId
+     * @param int $bookId
      * @return array
      * @throws GraphQlNoSuchEntityException
      */
-    private function getStudentData(int $studentId): array
+    private function getBookData(int $bookId): array
     {
-        $studentFactory = $this->studentFactory->create();
-        $this->studentResource->load($studentFactory, $studentId);
-        return $studentFactory->getData();
+        $bookFactory = $this->bookFactory->create();
+        $this->bookResource->load($bookFactory, $bookId);
+        return $bookFactory->getData();
     }
 }
