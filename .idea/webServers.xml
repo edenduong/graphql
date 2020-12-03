@@ -3,12 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="b4db6143-14e0-421b-ada0-e32bddd476b0" name="127.0.0.1" url="http://127.0.0.1">
-        <fileTransfer host="127.0.0.1" port="22" rootFolder="/home/eden/public_html/magento231" accessType="SFTP">
-          <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
-          </advancedOptions>
-          <option name="port" value="22" />
-        </fileTransfer>
+        <fileTransfer mountedRoot="$USER_HOME$/public_html/magento241" accessType="MOUNT" port="0" />
       </webServer>
     </option>
   </component>
